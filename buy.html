@@ -1,37 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Buy — devdebt1</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10110f">
+  <meta name="description" content="Request a single car, car pack, or custom Assetto Corsa import for Roblox Studio.">
+  <title>Request an import — devdebt1</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site">
-<div class="wrap nav">
-<a class="logo" href="index.html">dev<span>debt1</span></a>
-<nav class="menu">
-<a href="index.html">Home</a>
-<a href="brands.html">Brands</a>
-<a href="buy.html" class="active">Buy</a>
-<a href="contact.html">Contact</a>
-</nav>
-</div>
-</header>
-<main class="wrap">
-<section style="border:none">
-<h1>Buy a car import</h1>
-<p style="color:#9aa0a6;margin-top:10px">I take cars from Assetto Corsa and convert them for Roblox Studio. Message me with the car you want and I’ll let you know if I can do it.</p>
-<div class="grid" style="margin-top:26px">
-<div class="card"><div class="card-body"><h3>Single car import</h3><p>One Assetto Corsa car converted for Roblox Studio.</p></div></div>
-<div class="card"><div class="card-body"><h3>Car pack</h3><p>Multiple cars from the same brand or theme.</p></div></div>
-<div class="card"><div class="card-body"><h3>Custom request</h3><p>Send me the exact car, links, and what you need it for.</p></div></div>
-</div>
-<div class="note">Prices depend on the car, model quality, and how much work the conversion needs. Contact me before paying.</div>
-<a class="btn" href="contact.html">Request a car</a>
-</section>
-</main>
-<footer>© <span id="year"></span> devdebt1</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="logo" href="index.html" aria-label="devdebt1 home">devdebt<span>1</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span></span><span></span></button>
+      <nav class="menu" id="site-menu" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="brands.html">Brands</a><a href="buy.html" aria-current="page">Buy</a><a class="nav-cta" href="contact.html">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap page-main">
+    <section class="buy-intro">
+      <p class="eyebrow">START A PROJECT</p>
+      <h1>What are you<br>looking to drive?</h1>
+      <p>Tell me what you've got in mind. I'll check out the car and the details, then get back to you about what's possible. No fixed prices here — every request is a little different.</p>
+    </section>
+    <section class="buy-options" aria-label="Request options">
+      <div class="brand-grid">
+        <article class="buy-option"><span class="option-number">01 / ONE CAR</span><h2>Single car import</h2><p>One Assetto Corsa car, converted and prepared for Roblox Studio.</p></article>
+        <article class="buy-option"><span class="option-number">02 / A FEW CARS</span><h2>Car pack</h2><p>A set of cars for a shared theme, brand, or project.</p></article>
+        <article class="buy-option"><span class="option-number">03 / YOUR IDEA</span><h2>Custom request</h2><p>Have something specific in mind? Share the details and we'll take it from there.</p></article>
+      </div>
+    </section>
+    <section class="buy-next">
+      <h2>Have a car in mind?</h2>
+      <p>Send the mod link and any details that matter. I'll reply on Discord to talk it through.</p>
+      <a class="button button-primary" href="contact.html">Send a request <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="logo" href="index.html">devdebt<span>1</span></a><p>Made for the love of cars and the joy of building.</p><span>© <span data-year></span> devdebt1</span></div></footer>
+  <script src="site.js"></script>
 </body>
 </html>
