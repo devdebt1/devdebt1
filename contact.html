@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — devdebt1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap nav">
+<a class="logo" href="index.html">dev<span>debt1</span></a>
+<nav class="menu">
+<a href="index.html">Home</a>
+<a href="brands.html">Brands</a>
+<a href="buy.html">Buy</a>
+<a href="contact.html" class="active">Contact</a>
+</nav>
+</div>
+</header>
+<main class="wrap">
+<section style="border:none">
+<h1>Contact</h1>
+<p style="color:#9aa0a6;margin-top:10px">Send me a request and it goes straight to my Discord. Include your Discord username and ID so I can reply.</p>
+<form id="request-form" style="margin-top:24px">
+<input type="text" id="discord-username" placeholder="Discord username" required>
+<input type="text" id="discord-id" placeholder="Discord ID" required>
+<input type="text" id="roblox-username" placeholder="Roblox username (optional)">
+<input type="text" id="car-request" placeholder="Car / brand you want imported" required>
+<textarea id="details" rows="6" placeholder="Details: Assetto Corsa mod link, colors, parts, deadline, etc." required></textarea>
+<button class="btn" type="submit">Send Discord request</button>
+<p id="status" style="color:#9aa0a6;margin-top:10px"></p>
+</form>
+<div class="note">This sends your request to devdebt1’s Discord through a private webhook. Never share your Discord password here.</div>
+</section>
+</main>
+<footer>© <span id="year"></span> devdebt1</footer>
+<script>
+const WEBHOOK_URL = "PASTE_YOUR_DISCORD_WEBHOOK_URL_HERE";
+document.getElementById("request-form").addEventListener("submit", async function(e){
+e.preventDefault();
+const status=document.getElementById("status");
+const username=document.getElementById("discord-username").value.trim();
+const id=document.getElementById("discord-id").value.trim();
+const roblox=document.getElementById("roblox-username").value.trim()||"Not provided";
+const car=document.getElementById("car-request").value.trim();
+const details=document.getElementById("details").value.trim();
+if(WEBHOOK_URL.includes("PASTE_YOUR_DISCORD_WEBHOOK_URL_HERE")){status.textContent="Contact form is not connected yet.";return}
+status.textContent="Sending request...";
+const payload={username:"devdebt1 Requests",embeds:[{title:"New Car Import Request",color:0x7c9cff,fields:[{name:"Discord Username",value:username,inline:true},{name:"Discord ID",value:id,inline:true},{name:"Roblox Username",value:roblox,inline:true},{name:"Car / Brand",value:car},{name:"Details",value:details}],footer:{text:"Sent from devdebt1.github.io"}}]};
+try{const r=await fetch(WEBHOOK_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+if(r.ok){status.textContent="Request sent. I’ll message you on Discord.";document.getElementById("request-form").reset()}else{status.textContent="Could not send the request. Try again or DM me on Discord."}}
+catch{status.textContent="Could not send the request. Try again or DM me on Discord."}});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
