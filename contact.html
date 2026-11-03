@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — devdebt1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap nav">
+<a class="logo" href="index.html">dev<span>debt1</span></a>
+<nav class="menu">
+<a href="index.html">Home</a>
+<a href="brands.html">Brands</a>
+<a href="buy.html">Buy</a>
+<a href="contact.html" class="active">Contact</a>
+</nav>
+</div>
+</header>
+<main class="wrap">
+<section style="border:none">
+<h1>Contact</h1>
+<p style="color:#9aa0a6;margin-top:10px">Send me the car you want imported, your Roblox username, and any links to the Assetto Corsa mod.</p>
+<form action="https://formspree.io/f/your-form-id" method="POST" style="margin-top:24px">
+<input type="text" name="name" placeholder="Your name or Roblox username" required>
+<input type="email" name="email" placeholder="Your email" required>
+<input type="text" name="car" placeholder="Car / brand you want imported">
+<textarea name="message" rows="6" placeholder="Details: links, colors, parts, deadline, etc." required></textarea>
+<button class="btn" type="submit">Send message</button>
+</form>
+<div class="note">This form uses Formspree. Create a free Formspree form, replace <code>your-form-id</code> in <code>contact.html</code>, and messages will go to your email.</div>
+</section>
+</main>
+<footer>© <span id="year"></span> devdebt1</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

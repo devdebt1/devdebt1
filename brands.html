@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Brands — devdebt1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+<div class="wrap nav">
+<a class="logo" href="index.html">dev<span>debt1</span></a>
+<nav class="menu">
+<a href="index.html">Home</a>
+<a href="brands.html" class="active">Brands</a>
+<a href="buy.html">Buy</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+
+<main class="wrap">
+<section style="border:none">
+<h1>Car brands</h1>
+<p style="color:#9aa0a6;margin-top:10px">Pick a brand to see the cars I’ve imported.</p>
+<div class="grid" style="margin-top:26px">
+<a class="card" href="brand-bmw.html">
+<img src="images/placeholder-brand.jpg" alt="BMW">
+<div class="card-body"><h3>BMW</h3><p>View BMW imports</p></div>
+</a>
+<a class="card" href="brand-toyota.html">
+<img src="images/placeholder-brand.jpg" alt="Toyota">
+<div class="card-body"><h3>Toyota</h3><p>View Toyota imports</p></div>
+</a>
+<a class="card" href="brand-nissan.html">
+<img src="images/placeholder-brand.jpg" alt="Nissan">
+<div class="card-body"><h3>Nissan</h3><p>View Nissan imports</p></div>
+</a>
+</div>
+<div class="note">To add another brand: copy one of the <code>brand-*.html</code> files, rename it, then add a new card on this page.</div>
+</section>
+</main>
+
+<footer>© <span id="year"></span> devdebt1</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
