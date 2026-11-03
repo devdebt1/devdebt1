@@ -1,57 +1,66 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — devdebt1</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10110f">
+  <meta name="description" content="Send devdebt1 a car import request for Roblox Studio.">
+  <title>Contact — devdebt1</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site">
-<div class="wrap nav">
-<a class="logo" href="index.html">dev<span>debt1</span></a>
-<nav class="menu">
-<a href="index.html">Home</a>
-<a href="brands.html">Brands</a>
-<a href="buy.html">Buy</a>
-<a href="contact.html" class="active">Contact</a>
-</nav>
-</div>
-</header>
-<main class="wrap">
-<section style="border:none">
-<h1>Contact</h1>
-<p style="color:#9aa0a6;margin-top:10px">Send me a request and it goes straight to my Discord. Include your Discord username and ID so I can reply.</p>
-<form id="request-form" style="margin-top:24px">
-<input type="text" id="discord-username" placeholder="Discord username" required>
-<input type="text" id="discord-id" placeholder="Discord ID" required>
-<input type="text" id="roblox-username" placeholder="Roblox username (optional)">
-<input type="text" id="car-request" placeholder="Car / brand you want imported" required>
-<textarea id="details" rows="6" placeholder="Details: Assetto Corsa mod link, colors, parts, deadline, etc." required></textarea>
-<button class="btn" type="submit">Send Discord request</button>
-<p id="status" style="color:#9aa0a6;margin-top:10px"></p>
-</form>
-<div class="note">This sends your request to devdebt1’s Discord through a private webhook. Never share your Discord password here.</div>
-</section>
-</main>
-<footer>© <span id="year"></span> devdebt1</footer>
-<script>
-const WEBHOOK_URL = "https://ptb.discord.com/api/webhooks/1567298962476507298/1sNqoPz0JAKNYaaNLlSms-IaoxdDGzIkmhw6JWq5urOMmw_IV-zdl849wF1ORiO5TxBD";
-document.getElementById("request-form").addEventListener("submit", async function(e){
-e.preventDefault();
-const status=document.getElementById("status");
-const username=document.getElementById("discord-username").value.trim();
-const id=document.getElementById("discord-id").value.trim();
-const roblox=document.getElementById("roblox-username").value.trim()||"Not provided";
-const car=document.getElementById("car-request").value.trim();
-const details=document.getElementById("details").value.trim();
-if(WEBHOOK_URL.includes("PASTE_YOUR_DISCORD_WEBHOOK_URL_HERE")){status.textContent="Contact form is not connected yet.";return}
-status.textContent="Sending request...";
-const payload={username:"devdebt1 Requests",embeds:[{title:"New Car Import Request",color:0x7c9cff,fields:[{name:"Discord Username",value:username,inline:true},{name:"Discord ID",value:id,inline:true},{name:"Roblox Username",value:roblox,inline:true},{name:"Car / Brand",value:car},{name:"Details",value:details}],footer:{text:"Sent from devdebt1.github.io"}}]};
-try{const r=await fetch(WEBHOOK_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
-if(r.ok){status.textContent="Request sent. I’ll message you on Discord.";document.getElementById("request-form").reset()}else{status.textContent="Could not send the request. Try again or DM me on Discord."}}
-catch{status.textContent="Could not send the request. Try again or DM me on Discord."}});
-document.getElementById("year").textContent=new Date().getFullYear();
-</script>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="logo" href="index.html" aria-label="devdebt1 home">devdebt<span>1</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span></span><span></span></button>
+      <nav class="menu" id="site-menu" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="brands.html">Brands</a><a href="buy.html">Buy</a><a class="nav-cta" href="contact.html" aria-current="page">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap page-main">
+    <section class="page-heading">
+      <p class="eyebrow">LET'S TALK CARS</p>
+      <h1>Got a build in mind?</h1>
+      <p>Share the car and the details. Your request goes straight to my Discord, and I'll reply there.</p>
+    </section>
+    <section class="request-grid">
+      <aside class="request-aside">
+        <h2>A little detail goes a long way.</h2>
+        <p>Drop in a mod link if you have one. Colors, parts, how you plan to use the car, and any timing you're working around are all useful too.</p>
+        <div class="request-note"><strong>Just the essentials</strong>No email, password, or payment details needed. I'll get back to you using your Discord username.</div>
+      </aside>
+      <form class="request-form" id="request-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="discord-username">Discord username</label>
+            <input id="discord-username" name="discord-username" type="text" autocomplete="off" minlength="2" maxlength="32" placeholder="Your Discord username" required>
+          </div>
+          <div class="field">
+            <label for="discord-id">Discord ID</label>
+            <input id="discord-id" name="discord-id" type="text" inputmode="numeric" pattern="[0-9]{17,20}" minlength="17" maxlength="20" placeholder="17–20 digit ID" aria-describedby="discord-id-help" required>
+            <p class="form-help" id="discord-id-help">Enable Developer Mode in Discord, then right-click your name and choose Copy User ID.</p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="roblox-username">Roblox username <span>(optional)</span></label>
+          <input id="roblox-username" name="roblox-username" type="text" maxlength="20" autocomplete="off" placeholder="Your Roblox username">
+        </div>
+        <div class="field">
+          <label for="car-request">Car or brand</label>
+          <input id="car-request" name="car-request" type="text" maxlength="120" placeholder="e.g. Nissan Silvia S15" required>
+        </div>
+        <div class="field">
+          <label for="details">Details</label>
+          <textarea id="details" name="details" maxlength="1000" placeholder="Assetto Corsa mod link, colors, parts, deadline, or anything else I should know…" required></textarea>
+          <p class="form-help">Please keep links and other details under 1,000 characters.</p>
+        </div>
+        <button class="button button-primary" type="submit">Send request <span aria-hidden="true">↗</span></button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="logo" href="index.html">devdebt<span>1</span></a><p>Made for the love of cars and the joy of building.</p><span>© <span data-year></span> devdebt1</span></div></footer>
+  <script src="site.js"></script>
 </body>
 </html>

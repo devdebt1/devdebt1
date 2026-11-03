@@ -1,40 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toyota Cars — devdebt1</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10110f">
+  <meta name="description" content="Toyota cars imported from Assetto Corsa and converted for Roblox Studio.">
+  <title>Toyota — devdebt1 garage</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site">
-<div class="wrap nav">
-<a class="logo" href="index.html">dev<span>debt1</span></a>
-<nav class="menu">
-<a href="index.html">Home</a>
-<a href="brands.html" class="active">Brands</a>
-<a href="buy.html">Buy</a>
-<a href="contact.html">Contact</a>
-</nav>
-</div>
-</header>
-<main class="wrap">
-<section style="border:none">
-<p><a href="brands.html">← Back to brands</a></p>
-<h1 style="margin-top:12px">Toyota</h1>
-<p style="color:#9aa0a6;margin-top:10px">Cars imported from Assetto Corsa into Roblox Studio.</p>
-<div class="gallery" style="margin-top:26px">
-<div class="car">
-<img src="images/placeholder-car.jpg" alt="Toyota Supra MK4">
-<div class="car-info"><h3>Toyota Supra MK4</h3><p>Imported from Assetto Corsa and cleaned up for Roblox.</p></div>
-</div>\n<div class="car">
-<img src="images/placeholder-car.jpg" alt="Toyota AE86">
-<div class="car-info"><h3>Toyota AE86</h3><p>Converted for Roblox Studio.</p></div>
-</div>
-</div>
-</section>
-</main>
-<footer>© <span id="year"></span> devdebt1</footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="logo" href="index.html" aria-label="devdebt1 home">devdebt<span>1</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span></span><span></span></button>
+      <nav class="menu" id="site-menu" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="brands.html" aria-current="page">Brands</a><a href="buy.html">Buy</a><a class="nav-cta" href="contact.html">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap page-main">
+    <section class="page-heading brand-page-heading">
+      <a class="back-link" href="brands.html">← All brands</a>
+      <p class="eyebrow">THE GARAGE / TOYOTA</p>
+      <h1>Toyota</h1>
+      <p>Japanese legends, from touge to track, imported for Roblox Studio.</p>
+    </section>
+    <section class="gallery-section">
+      <div class="car-grid" data-brand-page="toyota"></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="logo" href="index.html">devdebt<span>1</span></a><p>Made for the love of cars and the joy of building.</p><span>© <span data-year></span> devdebt1</span></div></footer>
+  <script src="site.js"></script>
 </body>
 </html>
