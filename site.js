@@ -1,22 +1,22 @@
-// Add brands and cars here. Use image URLs or paths to files in the repository.
+// Add makes and cars here. Put your own pictures in images/ and use their file paths.
 const REQUEST_ENDPOINT = "https://devdebt1-contact.devdebt1.workers.dev";
 
 const BRANDS = [
   {
     name: "BMW",
     slug: "bmw",
-    description: "A mix of M cars and everyday icons.",
+    description: "A couple of BMWs from the collection.",
     image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=80",
     cars: [
       {
         name: "BMW M3 E46",
-        description: "A classic driver's car, brought into Roblox Studio.",
+        description: "A car I wanted to see cruising around a Roblox map.",
         image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=80",
         featured: true
       },
       {
         name: "BMW M4",
-        description: "A modern M car, set up for the Roblox road.",
+        description: "A more recent addition to the garage.",
         image: "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1000&q=80"
       }
     ]
@@ -24,18 +24,18 @@ const BRANDS = [
   {
     name: "Toyota",
     slug: "toyota",
-    description: "Japanese legends, from touge to track.",
+    description: "A couple of Toyotas I have been working on.",
     image: "https://images.unsplash.com/photo-1621993202323-f438eec934ff?auto=format&fit=crop&w=1000&q=80",
     cars: [
       {
         name: "Toyota Supra MK4",
-        description: "An unmistakable '90s icon, ready for Roblox.",
+        description: "The '90s coupe is one of my favourite shapes.",
         image: "https://images.unsplash.com/photo-1621993202323-f438eec934ff?auto=format&fit=crop&w=1000&q=80",
         featured: true
       },
       {
         name: "Toyota AE86",
-        description: "Light, simple, and made for a winding road.",
+        description: "Small, light, and right at home on a winding road.",
         image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=1000&q=80"
       }
     ]
@@ -43,36 +43,32 @@ const BRANDS = [
   {
     name: "Nissan",
     slug: "nissan",
-    description: "A few favourites from the Nissan lineup.",
+    description: "Two Nissans, with more room for the next one.",
     image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1000&q=80",
     cars: [
       {
         name: "Nissan Skyline R34",
-        description: "A familiar silhouette, imported for Roblox Studio.",
+        description: "A Skyline I have always wanted in a Roblox project.",
         image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1000&q=80",
         featured: true
       },
       {
         name: "Nissan 350Z",
-        description: "A rear-wheel-drive coupe with plenty of character.",
+        description: "A simple rear-wheel-drive coupe with a good shape.",
         image: "https://images.unsplash.com/photo-1594502184342-2e12f877aa73?auto=format&fit=crop&w=1000&q=80"
       }
     ]
   }
 ];
 
-function carCard(car, brand, index) {
+function carCard(car, brand) {
   return `
-    <article class="car-card">
-      <div class="car-image">
-        <img src="${car.image}" alt="${car.name}" loading="lazy">
-        <span class="card-index">${String(index + 1).padStart(2, "0")}</span>
-      </div>
-      <div class="car-info">
-        <div class="car-meta"><span>${brand.name}</span><span>Roblox Studio</span></div>
-        <h3>${car.name}</h3>
-        <p>${car.description}</p>
-      </div>
+    <article class="catalog-row">
+      <img class="catalog-thumb" src="${car.image}" alt="Temporary reference photo for ${car.name}" loading="lazy">
+      <span class="catalog-label">${brand.name}</span>
+      <h3 class="catalog-name">${car.name}</h3>
+      <p class="catalog-description">${car.description}</p>
+      <a class="catalog-action" href="contact.html">Ask about this →</a>
     </article>`;
 }
 
@@ -80,27 +76,45 @@ function renderBrands() {
   const container = document.querySelector("[data-brand-list]");
   if (!container) return;
 
-  container.innerHTML = BRANDS.map((brand, index) => `
-    <a class="brand-card" href="brand-${brand.slug}.html">
-      <div class="brand-image">
-        <img src="${brand.image}" alt="${brand.name} car" loading="lazy">
-        <span class="card-index">${String(index + 1).padStart(2, "0")} / ${String(BRANDS.length).padStart(2, "0")}</span>
+  container.innerHTML = BRANDS.map(brand => `
+    <article class="brand-card">
+      <a href="brand-${brand.slug}.html" aria-label="View ${brand.name} cars">
+        <img src="${brand.image}" alt="Temporary reference photo for ${brand.name}" loading="lazy">
+      </a>
+      <div class="brand-card-copy">
+        <h2>${brand.name}</h2>
+        <span class="brand-count">${brand.cars.length} ${brand.cars.length === 1 ? "car" : "cars"}</span>
+        <p>${brand.description}</p>
+        <a href="brand-${brand.slug}.html">View brand →</a>
       </div>
-      <div class="brand-info">
-        <div><h3>${brand.name}</h3><p>${brand.cars.length} ${brand.cars.length === 1 ? "IMPORT" : "IMPORTS"}</p></div>
-        <span class="brand-arrow" aria-hidden="true">↗</span>
-      </div>
-    </a>`).join("");
+    </article>`).join("");
 }
 
 function renderFeaturedCars() {
   const container = document.querySelector("#featured-cars");
   if (!container) return;
 
-  const cars = BRANDS.flatMap(brand => brand.cars
-    .filter(car => car.featured)
-    .map(car => ({ car, brand })));
-  container.innerHTML = cars.map(({ car, brand }, index) => carCard(car, brand, index)).join("");
+  const brands = BRANDS.filter(brand => brand.cars.some(car => car.featured));
+  container.innerHTML = brands.map(brand => {
+    const car = brand.cars.find(item => item.featured);
+    return `
+      <article class="featured-item">
+        <img src="${car.image}" alt="Temporary reference photo for ${car.name}" loading="lazy">
+        <div>
+          <p>${brand.name}</p>
+          <h3>${car.name}</h3>
+          <a href="brand-${brand.slug}.html">View brand →</a>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+function renderCurrentCars() {
+  const container = document.querySelector("#latest-cars");
+  if (!container) return;
+
+  const cars = BRANDS.flatMap(brand => brand.cars.map(car => ({ car, brand })));
+  container.innerHTML = cars.map(({ car, brand }) => carCard(car, brand)).join("");
 }
 
 function renderBrandPage() {
@@ -113,7 +127,7 @@ function renderBrandPage() {
     return;
   }
 
-  container.innerHTML = brand.cars.map((car, index) => carCard(car, brand, index)).join("");
+  container.innerHTML = brand.cars.map(car => carCard(car, brand)).join("");
 }
 
 function setupNavigation() {
@@ -185,6 +199,7 @@ document.querySelectorAll("[data-year]").forEach(element => {
 });
 renderBrands();
 renderFeaturedCars();
+renderCurrentCars();
 renderBrandPage();
 setupNavigation();
 setupRequestForm();
