@@ -3,64 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10110f">
-  <meta name="description" content="Send devdebt1 a car import request for Roblox Studio.">
+  <meta name="theme-color" content="#111411">
+  <meta name="description" content="Send devdebt1 a car import request on Discord.">
   <title>Contact — devdebt1</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="contact.css">
 </head>
-<body>
+<body class="contact-body">
   <header class="site-header">
     <div class="wrap nav">
-      <a class="logo" href="index.html" aria-label="devdebt1 home">devdebt<span>1</span></a>
+      <a class="logo" href="index.html" aria-label="devdebt1 home"><span class="logo-mark">d1</span><span>devdebt1</span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span></span><span></span></button>
       <nav class="menu" id="site-menu" aria-label="Main navigation">
-        <a href="index.html">Home</a><a href="brands.html">Brands</a><a href="buy.html">Buy</a><a class="nav-cta" href="contact.html" aria-current="page">Get in touch <span aria-hidden="true">↗</span></a>
+        <a href="index.html">Home</a><a href="brands.html">Cars &amp; brands</a><a href="buy.html">Request an import</a><a href="contact.html" aria-current="page">Contact</a>
       </nav>
     </div>
   </header>
-  <main class="wrap page-main">
-    <section class="page-heading">
-      <p class="eyebrow">LET'S TALK CARS</p>
-      <h1>Got a build in mind?</h1>
-      <p>Share the car and the details. Your request goes straight to my Discord, and I'll reply there.</p>
+  <main class="wrap page-main contact-page">
+    <div class="page-topline"><p>Contact</p></div>
+    <section class="page-heading contact-heading">
+      <p class="eyebrow">Car request</p>
+      <h1>What car are you looking for?</h1>
+      <p>Send your request to Discord. Add an Assetto Corsa mod link in the details if you have one.</p>
     </section>
-    <section class="request-grid">
-      <aside class="request-aside">
-        <h2>A little detail goes a long way.</h2>
-        <p>Drop in a mod link if you have one. Colors, parts, how you plan to use the car, and any timing you're working around are all useful too.</p>
-        <div class="request-note"><strong>Just the essentials</strong>No email, password, or payment details needed. I'll get back to you using your Discord username.</div>
-      </aside>
+    <section class="request-layout">
       <form class="request-form" id="request-form">
         <div class="form-row">
           <div class="field">
-            <label for="discord-username">Discord username</label>
+            <label for="discord-username">Discord username <span>required</span></label>
             <input id="discord-username" name="discord-username" type="text" autocomplete="off" minlength="2" maxlength="32" placeholder="Your Discord username" required>
           </div>
           <div class="field">
-            <label for="discord-id">Discord ID</label>
+            <label for="discord-id">Discord ID <span>required</span></label>
             <input id="discord-id" name="discord-id" type="text" inputmode="numeric" pattern="[0-9]{17,20}" minlength="17" maxlength="20" placeholder="17–20 digit ID" aria-describedby="discord-id-help" required>
-            <p class="form-help" id="discord-id-help">Enable Developer Mode in Discord, then right-click your name and choose Copy User ID.</p>
+            <p class="form-help" id="discord-id-help">Discord → User Settings → Advanced → Developer Mode. Then right-click your name and copy your ID.</p>
           </div>
         </div>
         <div class="field">
-          <label for="roblox-username">Roblox username <span>(optional)</span></label>
+          <label for="roblox-username">Roblox username <span>optional</span></label>
           <input id="roblox-username" name="roblox-username" type="text" maxlength="20" autocomplete="off" placeholder="Your Roblox username">
         </div>
         <div class="field">
-          <label for="car-request">Car or brand</label>
-          <input id="car-request" name="car-request" type="text" maxlength="120" placeholder="e.g. Nissan Silvia S15" required>
+          <label for="car-request">Car or brand <span>required</span></label>
+          <input id="car-request" name="car-request" type="text" maxlength="120" placeholder="For example: Nissan Silvia S15" required>
         </div>
         <div class="field">
-          <label for="details">Details</label>
-          <textarea id="details" name="details" maxlength="1000" placeholder="Assetto Corsa mod link, colors, parts, deadline, or anything else I should know…" required></textarea>
-          <p class="form-help">Please keep links and other details under 1,000 characters.</p>
+          <label for="details">Details <span>required</span></label>
+          <textarea id="details" name="details" maxlength="1000" placeholder="Mod link, color, parts, deadline, or anything else I should know…" required></textarea>
+          <p class="form-help">Up to 1,000 characters.</p>
         </div>
-        <button class="button button-primary" type="submit">Send request <span aria-hidden="true">↗</span></button>
+        <button class="button" type="submit">Send it to Discord <span aria-hidden="true">→</span></button>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>
-  <footer class="site-footer"><div class="wrap footer-inner"><a class="logo" href="index.html">devdebt<span>1</span></a><p>Made for the love of cars and the joy of building.</p><span>© <span data-year></span> devdebt1</span></div></footer>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="logo" href="index.html"><span class="logo-mark">d1</span><span>devdebt1</span></a><p>Assetto Corsa → Roblox Studio</p><span>© <span data-year></span></span></div></footer>
   <script src="site.js"></script>
 </body>
 </html>
