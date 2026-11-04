@@ -8,14 +8,15 @@ This is my small portfolio for cars I bring from Assetto Corsa into Roblox Studi
 | --- | --- |
 | `index.html` | Home page, intro, hero photo, and featured cars |
 | `brands.html` | Clickable list of makes |
-| `brand-bmw.html`, `brand-nissan.html`, `brand-toyota.html` | One gallery page for each make |
+| `brand-bmw.html`, `brand-dodge.html`, `brand-nissan.html`, `brand-toyota.html` | One gallery page for each make |
 | `buy.html` | Import options and request link |
 | `contact.html` | Discord request form |
-| `site.js` | Brand and car details, gallery rendering, navigation, and form behavior |
+| `site.js` | Brand and car details, gallery rendering, navigation, 3D preview dialog, and form behavior |
+| `model-viewer.js` | On-demand Three.js OBJ/MTL loading, lighting, and rotation controls |
 | `archive.css` | Home, Brands, brand pages, and Buy Options styles |
 | `portfolio.css`, `contact.css` | Existing Contact page styling; not used by the archive pages |
 | `style.css` | Older stylesheet retained in the repository |
-| `images/` | Place your own car screenshots and photos here |
+| `images/` | Place your own car screenshots and photos here; OBJ/MTL assets can go in `images/models/` |
 | `worker/index.js` | Cloudflare relay that forwards requests to Discord |
 
 ## Add a car to a brand
@@ -35,14 +36,14 @@ This is my small portfolio for cars I bring from Assetto Corsa into Roblox Studi
 3. Keep a comma between car objects. Set `featured: true` if you want the car on the home page. Other cars can leave out the `featured` line.
 4. Save `site.js` and refresh the page. The brand gallery and car count update from this list.
 
-The `image` value can be a file path in this repository, such as `images/honda-nsx.jpg`, or a full image URL. Local files are a better long-term choice: they stay under your control and don't depend on another site. Use a short description that sounds like you; it doesn't need to read like an advert.
+The `image` value can be a file path in this repository, such as `images/honda-nsx.jpg`, or a full image URL. It is optional when that car has a 3D model configured; without either an image or model, add a photo before publishing. Local files are a better long-term choice: they stay under your control and don't depend on another site. Use a short description that sounds like you; it doesn't need to read like an advert.
 
 ## Add a brand
 
 Each brand needs one entry in `site.js` and one HTML page. Use a lowercase slug with hyphens if needed. For example, `honda` becomes `brand-honda.html`.
 
 1. Copy an existing page such as `brand-toyota.html` and rename the copy to `brand-honda.html`.
-2. In the new file, update the page title, description, heading, the `Garage / ...` label, and the `Brand file / ...` number. The number is just a display label; it does not control the site.
+2. In the new file, update the page title, meta description, page-topline brand name, heading, and gallery label to Honda.
 3. Find `data-brand-page="toyota"` and change it to `data-brand-page="honda"`. That value must match the slug you add in the next step.
 4. Add this object to the `BRANDS` array in `site.js`:
 
@@ -63,10 +64,11 @@ Each brand needs one entry in `site.js` and one HTML page. Use a lowercase slug 
    }
    ```
 
-5. Add more car objects inside `cars` as you import them. The brand image is used in the Brands list; each car's own `image` is used in its gallery.
+5. Add more car objects inside `cars` as you import them. The brand image is used in the Brands list; each car's own `image` is used in its gallery. If you have no brand image yet, leave out `image` and the page shows a simple model placeholder.
 6. Open `brands.html`, click the new brand row, and check its car names and pictures. The row appears automatically when the JavaScript entry is saved.
 
 The full filename, slug, and `data-brand-page` value need to agree: `brand-honda.html`, `honda`, and `data-brand-page="honda"`.
+Keep the `type="importmap"` block in the copied brand page. It loads the pinned Three.js modules only if a visitor opens a configured 3D preview.
 
 ## Add or replace pictures
 
@@ -83,9 +85,39 @@ The full filename, slug, and `data-brand-page` value need to agree: `brand-honda
 
 The photos currently in the gallery are temporary stock-image references, not Roblox Studio captures. Replace them with your own screenshots before presenting the gallery as examples of finished work. Landscape screenshots work well; around 1200 pixels wide is plenty. Compress large PNG screenshots to JPG or WebP before adding them so the pages stay quick to load. Use images you made or have permission to publish. The image `alt` text for gallery cars comes from the car's `name`.
 
+## Add a rotatable OBJ car preview
+
+The car cards can show an interactive 3D preview when a car has both an OBJ model and its matching MTL material file. Cars without those two paths remain normal photo cards. There are no sample models in the repository; add your own files.
+
+1. Export the car as a Wavefront OBJ and include its matching MTL file. For example, put the files in `images/models/supra-mk4/`.
+2. Put every texture referenced by the MTL file in that folder too, or preserve the MTL's relative texture subfolders. The texture filenames and capitalization must match what the MTL says.
+3. Keep the car's existing `image` entry for the card picture, then add a `model` object to its entry in the `cars` list:
+
+   ```js
+   {
+     name: "Toyota Supra MK4",
+     description: "A short note about this car.",
+     image: "images/supra-mk4.jpg",
+     model: {
+       obj: "images/models/supra-mk4/supra.obj",
+       mtl: "images/models/supra-mk4/supra.mtl"
+     },
+     featured: true
+   }
+   ```
+
+4. Save the model files and `site.js`, then open the brand page. Its card should show **View 3D**; click that to open the larger viewer. Drag to rotate, scroll or pinch to zoom, and right-drag or use two fingers to pan. Keyboard users can focus the viewer and use the arrow keys to rotate and `+` / `-` to zoom.
+
+If you gzip an OBJ to keep it under GitHub's 100 MiB file limit, set `objCompressed: true` inside its `model` object. The viewer decompresses it in the browser; leave this option out for an ordinary `.obj` file.
+
+The preview loads Three.js and its OBJ/MTL loaders from jsDelivr only after **View 3D** is clicked. Visitors need an internet connection and a WebGL-capable browser to use it; the card photo still appears if the viewer cannot load. Keep the model and textures reasonably small for page visitors. In Blender, a useful export prep is to apply object transforms, remove cameras/lights and unused parts, triangulate the mesh if needed, and export the material file with the OBJ. OBJ is a static mesh format, so it does not carry car animations or interactive Roblox parts.
+
+The Dodge Viper entry uses the supplied `hwa_viper_acr.obj`, stored as `images/models/dodge-viper-acr/hwa_viper_acr.obj.gz`. The original OBJ is larger than GitHub's 100 MiB per-file limit, so it is gzip-compressed and the entry sets `objCompressed: true`; the viewer decompresses it in the browser. The attachment did not include `hwa_viper_acr.mtl` or any textures, so `preview.mtl` currently supplies neutral placeholder materials. Replace it with the original MTL and textures if you have them; the current preview will show the model shape, not its original paint, decals, or surface detail.
+
 ## Change the look or page text
 
 - Colors, navigation, footer, spacing, and typography for Home, Brands, brand pages, and Buy Options are in `archive.css`.
+- Car card and 3D viewer styling is also in `archive.css`; the OBJ/MTL rendering code is in `model-viewer.js`.
 - `contact.html` keeps its existing `portfolio.css` and `contact.css` stylesheets. Its form behavior stays in `site.js`; leave `setupRequestForm` and `REQUEST_ENDPOINT` unchanged.
 - The home intro and home-page photo caption are in `index.html`.
 - The words on each brand page are in its `brand-*.html` file.

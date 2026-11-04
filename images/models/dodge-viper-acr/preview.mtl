@@ -1,0 +1,603 @@
+# Neutral preview materials generated because the OBJ attachment did not include its original MTL or textures.
+newmtl Dodge_ViperACRExtremeAero_2016_Wheel01A01BrakeDisc_a_Ce_dce46ae
+Ka 0.08 0.08 0.08
+Kd 0.520 0.530 0.550
+Ks 0.720 0.720 0.720
+Ns 88
+illum 2
+d 1.00
+newmtl Dodge_ViperACRExtremeAero_2016_Wheel01A01CalliperBadgin_5f17c4d
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl Dodge_ViperACRExtremeAero_2016_Wheel01A01Rim_a_Details__f0c965b
+Ka 0.08 0.08 0.08
+Kd 0.520 0.530 0.550
+Ks 0.720 0.720 0.720
+Ns 88
+illum 2
+d 1.00
+newmtl ENG_SUSP_METAL
+Ka 0.08 0.08 0.08
+Kd 0.520 0.530 0.550
+Ks 0.720 0.720 0.720
+Ns 88
+illum 2
+d 1.00
+newmtl EXT_PLATE_plastic
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl Eng_patternA
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl Mirrors
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl dash_lights
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_badges_A
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_boot_colored
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_chrome
+Ka 0.08 0.08 0.08
+Kd 0.520 0.530 0.550
+Ks 0.720 0.720 0.720
+Ns 88
+illum 2
+d 1.00
+newmtl eng_details_a
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_details_bolts_hood_A
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_fiber_glass
+Ka 0.08 0.08 0.08
+Kd 0.350 0.440 0.500
+Ks 0.500 0.500 0.500
+Ns 72
+illum 2
+d 0.58
+newmtl eng_label_a_sticker
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_label_a_stickers
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_metalic_colored
+Ka 0.08 0.08 0.08
+Kd 0.520 0.530 0.550
+Ks 0.720 0.720 0.720
+Ns 88
+illum 2
+d 1.00
+newmtl eng_patternbraidedA
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_plastic
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl eng_radiator_pattern
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_ridgesA
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_ridgesA_belt
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl eng_weld
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_ACR_badge
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_black
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl ext_black_glossy
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl ext_black_plastic_soft
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl ext_black_semi_glossy
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl ext_bulbs_glass
+Ka 0.08 0.08 0.08
+Kd 0.350 0.440 0.500
+Ks 0.500 0.500 0.500
+Ns 72
+illum 2
+d 0.58
+newmtl ext_calipers
+Ka 0.08 0.08 0.08
+Kd 0.580 0.120 0.080
+Ks 0.420 0.420 0.420
+Ns 54
+illum 2
+d 1.00
+newmtl ext_car_paint_a
+Ka 0.08 0.08 0.08
+Kd 0.420 0.440 0.470
+Ks 0.720 0.720 0.720
+Ns 96
+illum 2
+d 1.00
+newmtl ext_car_paint_b
+Ka 0.08 0.08 0.08
+Kd 0.420 0.440 0.470
+Ks 0.720 0.720 0.720
+Ns 96
+illum 2
+d 1.00
+newmtl ext_car_paint_c
+Ka 0.08 0.08 0.08
+Kd 0.420 0.440 0.470
+Ks 0.720 0.720 0.720
+Ns 96
+illum 2
+d 1.00
+newmtl ext_carbon_fiber
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl ext_chrome
+Ka 0.08 0.08 0.08
+Kd 0.520 0.530 0.550
+Ks 0.720 0.720 0.720
+Ns 88
+illum 2
+d 1.00
+newmtl ext_clear_glass
+Ka 0.08 0.08 0.08
+Kd 0.350 0.440 0.500
+Ks 0.500 0.500 0.500
+Ns 72
+illum 2
+d 0.58
+newmtl ext_details_A
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_exhaust
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_front_light
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_front_light_glass_nm
+Ka 0.08 0.08 0.08
+Kd 0.350 0.440 0.500
+Ks 0.500 0.500 0.500
+Ns 72
+illum 2
+d 0.58
+newmtl ext_glass
+Ka 0.08 0.08 0.08
+Kd 0.350 0.440 0.500
+Ks 0.500 0.500 0.500
+Ns 72
+illum 2
+d 0.58
+newmtl ext_headlight_glass
+Ka 0.08 0.08 0.08
+Kd 0.350 0.440 0.500
+Ks 0.500 0.500 0.500
+Ns 72
+illum 2
+d 0.58
+newmtl ext_light_pattern_a
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_light_rear_pattern_a_reflector
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_pattern_a
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_plate
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_rear_lights
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_rear_viper_badge
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_rims
+Ka 0.08 0.08 0.08
+Kd 0.520 0.530 0.550
+Ks 0.720 0.720 0.720
+Ns 88
+illum 2
+d 1.00
+newmtl ext_tailight_black_red_glass
+Ka 0.08 0.08 0.08
+Kd 0.350 0.440 0.500
+Ks 0.500 0.500 0.500
+Ns 72
+illum 2
+d 0.58
+newmtl ext_tailight_red_glass
+Ka 0.08 0.08 0.08
+Kd 0.350 0.440 0.500
+Ks 0.500 0.500 0.500
+Ns 72
+illum 2
+d 0.58
+newmtl ext_wing
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl ext_wing_detail_A
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_alc
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_android_auto
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_black
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl int_black_plastic_soft
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl int_carbon_console
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl int_chrome
+Ka 0.08 0.08 0.08
+Kd 0.520 0.530 0.550
+Ks 0.720 0.720 0.720
+Ns 88
+illum 2
+d 1.00
+newmtl int_cloth
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_cluster_glass
+Ka 0.08 0.08 0.08
+Kd 0.350 0.440 0.500
+Ks 0.500 0.500 0.500
+Ns 72
+illum 2
+d 0.58
+newmtl int_decals_a
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_details_PatternE
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_details_patternA
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_gauges
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_gauges_forza
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_gauges_forza_emisive
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_gauges_forza_needle
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_glass
+Ka 0.08 0.08 0.08
+Kd 0.350 0.440 0.500
+Ks 0.500 0.500 0.500
+Ns 72
+illum 2
+d 0.58
+newmtl int_labels_doors_a
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_labels_emmisive_a
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_leather_0
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_leather_1
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_leather_2
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_metal_colored
+Ka 0.08 0.08 0.08
+Kd 0.520 0.530 0.550
+Ks 0.720 0.720 0.720
+Ns 88
+illum 2
+d 1.00
+newmtl int_patternC
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_pattern_D
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_pattern_ridges_B
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_steering_badge
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_steering_colored
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl int_stitches
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl interior_detail_patternB
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl license_plate
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl license_plate_carbon_fiber
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
+newmtl license_plate_sticker
+Ka 0.08 0.08 0.08
+Kd 0.460 0.480 0.510
+Ks 0.220 0.220 0.220
+Ns 28
+illum 2
+d 1.00
+newmtl tyre
+Ka 0.08 0.08 0.08
+Kd 0.120 0.130 0.140
+Ks 0.160 0.160 0.160
+Ns 18
+illum 2
+d 1.00
