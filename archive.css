@@ -58,22 +58,36 @@ button { font: inherit; }
 .featured-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .featured-item { display: grid; grid-template-columns: 88px minmax(0, 1fr); align-items: center; gap: 12px; min-width: 0; padding: 9px; border: 1px solid var(--line); background: var(--surface); }
 .featured-item img { width: 88px; height: 68px; object-fit: cover; background: var(--bg); }
+.featured-model-placeholder { display: grid; width: 88px; height: 68px; place-items: center; border: 1px solid var(--line); background: radial-gradient(ellipse at center, #242a31 0%, #12151a 76%); color: var(--accent); font: .85rem var(--mono); }
 .featured-item p { margin: 0 0 2px; color: var(--muted); font: .65rem var(--mono); }
 .featured-item h3 { margin: 0 0 3px; font-size: .95rem; }
 .featured-item a { color: var(--accent); font-size: .75rem; }
 
-.catalog-list { border-top: 1px solid var(--line); }
-.catalog-row { display: grid; grid-template-columns: 92px 90px minmax(160px, .8fr) minmax(0, 1.5fr) auto; align-items: center; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); }
-.catalog-label { color: var(--muted); font: .68rem var(--mono); }
-.catalog-thumb { width: 92px; height: 68px; object-fit: cover; background: var(--surface); }
-.catalog-name { margin: 0; font-size: .92rem; font-weight: 600; }
-.catalog-brand { display: block; margin-top: 2px; color: var(--muted); font-size: .72rem; }
-.catalog-description { margin: 0; color: var(--muted); font-size: .78rem; }
-.catalog-action { color: var(--accent); font-size: .77rem; white-space: nowrap; }
+.catalog-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.car-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+.car-card-image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--bg); }
+.car-card-preview-placeholder { display: flex; min-height: 0; aspect-ratio: 16 / 10; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background: radial-gradient(ellipse at center, #242a31 0%, #12151a 76%); color: var(--muted); font-family: var(--mono); }
+.car-card-preview-placeholder span, .brand-card-preview-placeholder span { font-size: .64rem; letter-spacing: .12em; }
+.car-card-preview-placeholder strong { color: var(--accent); font-size: 2rem; }
+.car-card-preview-placeholder small { font-size: .66rem; }
+.car-card-copy { padding: 13px; }
+.car-card-meta { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px; color: var(--muted); font: .65rem var(--mono); text-transform: uppercase; }
+.car-card-meta span:last-child { color: var(--accent); }
+.car-card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.car-card-copy > p { min-height: 3em; margin: 0 0 14px; color: var(--muted); font-size: .8rem; }
+.car-card-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; }
+.car-card-model { padding: 7px 10px; border: 1px solid var(--accent); background: transparent; color: var(--accent); font-size: .77rem; cursor: pointer; }
+.car-card-model:hover, .car-card-model:focus-visible { background: var(--accent); color: #000; }
+.car-card-model--photo { border-color: var(--line); color: var(--muted); cursor: default; }
+.car-card-model--photo:hover { background: transparent; color: var(--muted); }
+.car-card-contact { color: var(--muted); font-size: .77rem; }
+.car-card-contact:hover { color: var(--accent); }
 
 .brand-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .brand-card { min-width: 0; border: 1px solid var(--line); background: var(--surface); }
 .brand-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--bg); }
+.brand-card-preview-placeholder { display: flex; aspect-ratio: 16 / 9; flex-direction: column; align-items: center; justify-content: center; gap: 7px; background: radial-gradient(ellipse at center, #242a31 0%, #12151a 76%); color: var(--muted); font-family: var(--mono); }
+.brand-card-preview-placeholder strong { color: var(--accent); font-size: 1rem; font-weight: 400; }
 .brand-card-copy { display: grid; grid-template-columns: 1fr auto; gap: 5px 12px; padding: 12px; }
 .brand-card-copy h2 { margin: 0; font-size: 1.1rem; }
 .brand-card-copy p { grid-column: 1; margin: 0; color: var(--muted); font-size: .77rem; }
@@ -86,9 +100,20 @@ button { font: inherit; }
 .brand-heading h1 { margin-bottom: 8px; }
 .brand-heading p:last-child { color: var(--muted); }
 .gallery-section { padding-bottom: 46px; }
-.gallery-section .catalog-row { grid-template-columns: 150px 90px minmax(170px, .8fr) minmax(0, 1.5fr) auto; }
-.gallery-section .catalog-thumb { width: 150px; height: 88px; }
 .gallery-empty { padding-block: 18px; border-block: 1px solid var(--line); color: var(--muted); }
+
+.model-dialog { width: min(940px, calc(100% - 28px)); max-width: none; max-height: calc(100% - 28px); padding: 18px; border: 1px solid var(--line); background: var(--bg); color: var(--text); }
+.model-dialog::backdrop { background: rgb(0 0 0 / .78); }
+.model-dialog-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; margin-bottom: 12px; }
+.model-dialog-header .eyebrow { margin-bottom: 4px; }
+.model-dialog-header h2 { margin: 0; font-size: clamp(1.2rem, 3vw, 1.8rem); }
+.model-dialog-close { flex: 0 0 auto; padding: 7px 10px; border: 1px solid var(--line); background: var(--surface); color: var(--text); cursor: pointer; }
+.model-dialog-close:hover { border-color: var(--accent); color: var(--accent); }
+.model-stage { width: 100%; height: clamp(280px, 58vh, 590px); overflow: hidden; background: radial-gradient(ellipse at center, #242a31 0%, #171b20 74%); }
+.model-stage canvas { display: block; width: 100%; height: 100%; }
+.model-status { margin: 10px 0; color: var(--muted); font-size: .82rem; }
+.model-dialog-help { margin: 10px 0 0; color: var(--muted); font-size: .72rem; }
+.model-dialog-close:focus-visible, .car-card-model:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .buy-intro { max-width: 760px; padding-bottom: 22px; }
 .request-options { border-top: 1px solid var(--line); }
@@ -115,10 +140,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 @media (max-width: 800px) {
   .home-hero { grid-template-columns: 1fr 1fr; gap: 20px; }
   .featured-grid, .brand-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .catalog-row { grid-template-columns: 82px 75px minmax(110px, .8fr) minmax(0, 1.2fr) auto; gap: 10px; }
-  .catalog-thumb { width: 82px; height: 58px; }
-  .gallery-section .catalog-row { grid-template-columns: 110px 75px minmax(130px, .8fr) minmax(0, 1.2fr) auto; }
-  .gallery-section .catalog-thumb { width: 110px; height: 70px; }
+  .catalog-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 600px) {
@@ -141,14 +163,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .home-photo img { aspect-ratio: 16 / 9; }
   .section-block { padding-block: 19px 26px; }
   .featured-grid, .brand-grid { grid-template-columns: 1fr; }
+  .catalog-list { grid-template-columns: 1fr; }
   .featured-item { grid-template-columns: 82px minmax(0, 1fr); }
   .featured-item img { width: 82px; height: 62px; }
-  .catalog-row, .gallery-section .catalog-row { grid-template-columns: 70px minmax(0, 1fr) auto; gap: 5px 10px; padding-block: 10px; }
-  .catalog-thumb, .gallery-section .catalog-thumb { grid-column: 1; grid-row: 1 / span 3; width: 70px; height: 58px; }
-  .catalog-label { grid-column: 2; grid-row: 1; }
-  .catalog-name { grid-column: 2; grid-row: 2; }
-  .catalog-description { grid-column: 2 / 4; grid-row: 3; font-size: .74rem; }
-  .catalog-action { grid-column: 3; grid-row: 1 / span 2; justify-self: end; }
+  .featured-model-placeholder { width: 82px; height: 62px; }
+  .car-card-copy > p { min-height: 0; }
+  .model-dialog { padding: 13px; }
+  .model-stage { height: min(58vh, 440px); min-height: 240px; }
   .request-option { grid-template-columns: 32px minmax(0, 1fr) auto; gap: 7px 10px; }
   .request-option h2 { grid-column: 2; }
   .request-option p { grid-column: 2 / 4; }
